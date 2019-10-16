@@ -1,0 +1,22 @@
+{
+  "name": "paginaprofil",
+  "version": "1.0.0",
+  "description": "pagina de profil",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiciumihai17/webtech-profile2020.git"
+  },
+  "author": "mihaichiciu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chiciumihai17/webtech-profile2020/issues"
+  },
+  "homepage": "https://github.com/chiciumihai17/webtech-profile2020#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
