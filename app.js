@@ -7,6 +7,8 @@ app.get("/home", (req, res) => {
    res.send("Hello World");
 });
 
-app.listen(8080, process.env.IP, () => {
+console.log(process.env.IP);
+
+app.listen(3000, () => {
     console.log("Server has started!");
 });
