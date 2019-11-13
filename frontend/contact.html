@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Page</title>
+    </head>
+    <body>
+        <form action="/messages" method="POST">
+            <label for="fullname">Nume: </label>
+            <input name="fullname" type="text" value="FirstName"><br>
+            <label for="message">Message: </label>
+            <textarea name="message" rows="5" cols="50">asdasd</textarea><br>
+            <input type="submit" value="Send message"/>
+        </form>
+        <div id="content"></div>
+        
+        <script type="text/javascript">
+            function reqListener() {
+                console.log(this.responseText);
+                var messages = JSON.parse(this.responseText);
+                console.log(messages);
+                
+                var htmlTable = "<table>";
+                
+                for(var i = 0; i < messages.length; i++) {
+                    var row = "<tr>";
+                    row = row + "<td>" + messages[i].name + "</td>";
+                    row = row + "<td>" + messages[i].text + "</td>";
+                    row += "</tr>";
+                    htmlTable = htmlTable + row;
+                }
+
+                htmlTable += "</table>";
+                
+                console.log(htmlTable);
+                
+                document.getElementById("content").innerHTML = htmlTable
+            }
+            
+            var oReq = new XMLHttpRequest();
+            oReq.addEventListener("load", reqListener);
+            oReq.open("GET", "/messages");
+            oReq.send();
+        </script>
+    </body>
+</html>
